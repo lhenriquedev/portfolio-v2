@@ -27,6 +27,7 @@
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 body {
@@ -68,5 +69,63 @@ select {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 917px) {
+  .header {
+    .btn-mobile {
+      display: block;
+      z-index: 9999;
+    }
+  }
+
+  .header nav {
+    background-color: var(--dark-200);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+
+    transform: translateX(100%);
+
+    /* 1) Hide it visually */
+    opacity: 0;
+    /* 2) Make it unacessible to mouse and keyboard */
+    pointer-events: none;
+    /* 3) Hide it from screen readers */
+    visibility: hidden;
+  }
+
+  .nav-open nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .header nav ul {
+    flex-direction: column;
+    gap: 6.4rem;
+  }
+
+  .header nav a,
+  .header nav a:link,
+  .header nav a:visited {
+    font-size: 3rem;
+  }
+
+  .nav-open .icon-mobile[name="close-outline"] {
+    display: block;
+  }
+  .nav-open .icon-mobile[name="menu-outline"] {
+    display: none;
   }
 }

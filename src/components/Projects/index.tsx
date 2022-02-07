@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import { Button } from "../Button";
 
 import LoadingIcons from "react-loading-icons";
@@ -33,15 +34,15 @@ export function Projects() {
   return (
     <section className="projects">
       <h2>Projetos</h2>
+
       <div className="projects__container">
         {repo.map((repo) => (
           <div className="projects__project" key={repo.repo}>
-            <div className="projects__project-image-box">
-              <img
-                src={repo.image}
-                alt={repo.description ?? "Projeto tirado do github"}
-              />
-            </div>
+            <img
+              src={repo.image}
+              alt={repo.description ?? "Projeto tirado do github"}
+            />
+
             <div className="projects__project-text-box">
               <h3>{repo.repo}</h3>
               <p>

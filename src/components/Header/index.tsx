@@ -1,13 +1,20 @@
 import { useTheme } from "../../context/ThemeContext";
 import { FiMoon, FiSun } from "react-icons/fi";
+import { IoMenuOutline, IoCloseOutline } from "react-icons/io5";
 
 import "./index.scss";
+import { useState } from "react";
 
 export function Header() {
   const { theme, setTheme } = useTheme();
+  const [isActive, setIsActive] = useState(false);
+
+  const toggleResponsive = () => {
+    setIsActive((prev) => !prev);
+  };
 
   return (
-    <header className="header">
+    <header className={isActive ? "header nav-open" : "header"}>
       <span className="header__logo">Henrique</span>
       <nav>
         <ul>
@@ -23,7 +30,6 @@ export function Header() {
           <li>
             <a href="#projects">Projetos</a>
           </li>
-
           <li>
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -47,6 +53,11 @@ export function Header() {
           </li>
         </ul>
       </nav>
+      {/* FIX: Arrumar o menu mobile */}
+      <button className="btn-mobile" onClick={toggleResponsive}>
+        <IoMenuOutline className="icon-mobile" name="menu-outline" />
+        <IoCloseOutline className="icon-mobile" name="close-outline" />
+      </button>
     </header>
   );
 }

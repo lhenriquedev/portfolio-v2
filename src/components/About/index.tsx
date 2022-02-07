@@ -14,7 +14,7 @@ export function About() {
     <section className="about">
       <div className="about__container">
         <div className="about__image-box">
-          <p className="about__photo">FOTO</p>
+          <p className="about__photo">NOT YET :(</p>
         </div>
         <div className="about__text-box">
           <div className="about__text-box-info">
