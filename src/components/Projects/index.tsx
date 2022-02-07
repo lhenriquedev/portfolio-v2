@@ -1,94 +1,62 @@
+import { useEffect, useState } from "react";
 import { Button } from "../Button";
+
+import LoadingIcons from "react-loading-icons";
 
 import linkSVG from "../../assets/link.svg";
 
 import "./index.scss";
 
+interface RepoProps {
+  owner: string;
+  repo: string;
+  link: string;
+  image: string;
+  website: string;
+  language: string;
+  description: string;
+}
+
 export function Projects() {
+  const [repo, setRepo] = useState<RepoProps[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    fetch(`https://gh-pinned-repos.egoist.sh/?username=lhenriquedev`)
+      .then((response) => response.json())
+      .then((data) => setRepo(data))
+      .then(() => setLoading(false));
+  }, []);
+
+  if (loading) return <LoadingIcons.SpinningCircles />;
+
   return (
     <section className="projects">
       <h2>Projetos</h2>
       <div className="projects__container">
-        {/* 0 */}
-        <div className="projects__project">
-          <div className="projects__project-image-box">
-            <span>Foto</span>
-          </div>
-          <div className="projects__project-text-box">
-            <h3>Nome do projeto</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              blandit interdum odio eu varius.
-            </p>
-            <span>Tecnologias usadas no projeto</span>
+        {repo.map((repo) => (
+          <div className="projects__project" key={repo.repo}>
+            <div className="projects__project-image-box">
+              <img
+                src={repo.image}
+                alt={repo.description ?? "Projeto tirado do github"}
+              />
+            </div>
+            <div className="projects__project-text-box">
+              <h3>{repo.repo}</h3>
+              <p>
+                {repo.description ? repo.description : "Não tem descrição."}
+              </p>
+              <span>Tecnologias usadas no projeto: {repo.language}</span>
 
-            <Button
-              imagePath={linkSVG}
-              className="button button--purple"
-              title="Visualizar"
-            />
+              <Button
+                imagePath={linkSVG}
+                className="button button--purple"
+                title="Visualizar"
+              />
+            </div>
           </div>
-        </div>
-        {/* 1 */}
-        <div className="projects__project">
-          <div className="projects__project-image-box">
-            <span>Foto</span>
-          </div>
-          <div className="projects__project-text-box">
-            <h3>Nome do projeto</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              blandit interdum odio eu varius.
-            </p>
-            <span>Tecnologias usadas no projeto</span>
-
-            <Button
-              imagePath={linkSVG}
-              className="button button--purple"
-              title="Visualizar"
-            />
-          </div>
-        </div>
-        {/* 2 */}
-        <div className="projects__project">
-          <div className="projects__project-image-box">
-            <span>Foto</span>
-          </div>
-          <div className="projects__project-text-box">
-            <h3>Nome do projeto</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              blandit interdum odio eu varius.
-            </p>
-            <span>Tecnologias usadas no projeto</span>
-
-            <Button
-              imagePath={linkSVG}
-              className="button button--purple"
-              title="Visualizar"
-            />
-          </div>
-        </div>
-        {/* 3 */}
-        <div className="projects__project">
-          <div className="projects__project-image-box">
-            <span>Foto</span>
-          </div>
-          <div className="projects__project-text-box">
-            <h3>Nome do projeto</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              blandit interdum odio eu varius.
-            </p>
-            <span>Tecnologias usadas no projeto</span>
-
-            <Button
-              imagePath={linkSVG}
-              className="button button--purple"
-              title="Visualizar"
-            />
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
