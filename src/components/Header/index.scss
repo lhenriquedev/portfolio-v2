@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 2px solid #151515;
+
+  padding: 0 4.8rem;
+  height: 8rem;
+
+  &__logo {
+    font-size: 2.4rem;
+    color: var(--blue);
+  }
+
+  nav {
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 4.8rem;
+      list-style: none;
+    }
+
+    a,
+    a:link,
+    a:visited {
+      display: inline-block;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var(--gray-light);
+      text-decoration: none;
+      transition: all 0.3s ease-out;
+
+      &:hover,
+      &:active {
+        color: var(--blue);
+      }
+    }
+
+    button {
+      border: none;
+      background: none;
+      color: var(--blue);
+      cursor: pointer;
+    }
+  }
+}
