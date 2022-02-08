@@ -6,15 +6,11 @@
 
 <p align="left">Meu portfólio na versão II. Foi uma iniciativa lá na comunidade do Iuri Code e que acabou virando meu portfólio principal.</p>
 
-<br/>
-
 ## Pré requisitoos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/).
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
-
-<br/>
 
 ### 🎲 Rodando o aplicação
 
@@ -42,10 +38,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [TypeScript](https://www.typescriptlang.org/)
 - [React Tab](https://github.com/reactjs/react-tabs)
 
-<br/>
-<br/>
-
-### Autor
+## Autor
 
 ---
 
