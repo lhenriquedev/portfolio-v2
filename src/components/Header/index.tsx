@@ -33,6 +33,7 @@ export function Header() {
           <li>
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              disabled
             >
               {theme === "dark" ? (
                 <FiSun
