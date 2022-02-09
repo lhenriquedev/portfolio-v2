@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { createContext, useContext, useEffect, useState } from "react";
 /* 
 const themeColours = {

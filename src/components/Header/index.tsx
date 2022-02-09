@@ -1,4 +1,4 @@
-import { FiMoon, FiSun } from "react-icons/fi";
+import { FiSun } from "react-icons/fi";
 import { IoMenuOutline, IoCloseOutline } from "react-icons/io5";
 
 import "./index.scss";
