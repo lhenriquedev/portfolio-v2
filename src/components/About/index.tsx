@@ -38,13 +38,13 @@ export function About() {
           <div className="about__text-box-cta">
             <Button
               className="button button--pink"
-              imagePath={downloadSVG}
-              title="Currículo"
+              image={downloadSVG}
+              name="Currículo"
             />
             <Button
               className="button button--purple"
-              imagePath={mailSVG}
-              title="Email"
+              image={mailSVG}
+              name="Email"
             />
           </div>
         </div>

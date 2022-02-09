@@ -18,13 +18,13 @@ export function Hero() {
         <div className="hero__cta">
           <Button
             className="button button--purple"
-            imagePath={linkedinSvg}
-            title="Linkedin"
+            image={githubSvg}
+            name="Github"
           />
           <Button
             className="button button--pink"
-            imagePath={githubSvg}
-            title="Github"
+            image={linkedinSvg}
+            name="Linkedin"
           />
         </div>
       </div>

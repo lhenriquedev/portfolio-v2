@@ -1,16 +1,16 @@
 import "./index.scss";
 
 interface ButtonProps {
-  imagePath: string;
-  title: string;
+  image: string;
+  name: string;
   className: string;
 }
 
-export function Button({ imagePath, title, className }: ButtonProps) {
+export function Button({ image, name, className }: ButtonProps) {
   return (
-    <a href="#seila" className={className}>
-      <img src={imagePath} alt="" />
-      <span>{title}</span>
-    </a>
+    <button className={className}>
+      <img src={image} alt={name} />
+      <span>{name}</span>
+    </button>
   );
 }

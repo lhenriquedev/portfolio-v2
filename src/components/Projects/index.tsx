@@ -51,9 +51,9 @@ export function Projects() {
               <span>Tecnologias usadas no projeto: {repo.language}</span>
 
               <Button
-                imagePath={linkSVG}
-                className="button button--purple"
-                title="Visualizar"
+                image={linkSVG}
+                className="button button--pink"
+                name="Visualizar"
               />
             </div>
           </div>
