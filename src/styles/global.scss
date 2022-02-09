@@ -20,9 +20,6 @@
 
   --gray-light: #c4c4c4;
   --white: #ffffff;
-
-  --background-color: #121212;
-  --color: #343434;
 }
 
 html {
@@ -33,7 +30,8 @@ html {
 body {
   font-family: "Inter", sans-serif;
   line-height: 1;
-  background-color: var(--background-color);
+  background-color: var(--dark);
+  overflow-x: hidden;
 }
 
 /* Set core root defaults */
@@ -72,6 +70,11 @@ select {
   }
 }
 
+@media (max-width: 1200px) {
+  html {
+    font-size: 56.25%;
+  }
+}
 @media (max-width: 917px) {
   .header {
     .btn-mobile {
@@ -94,8 +97,6 @@ select {
     justify-content: center;
     transition: all 0.5s ease-in;
 
-    transform: translateX(100%);
-
     /* 1) Hide it visually */
     opacity: 0;
     /* 2) Make it unacessible to mouse and keyboard */
@@ -108,7 +109,6 @@ select {
     opacity: 1;
     pointer-events: auto;
     visibility: visible;
-    transform: translateX(0);
   }
 
   .header nav ul {

@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-
+/* 
 const themeColours = {
   light: {
     color: "#171717",
@@ -50,3 +50,4 @@ export const ThemeProvider = ({ children }: ThemeProps) => {
 };
 
 export const useTheme = () => useContext(ThemeContext);
+ */

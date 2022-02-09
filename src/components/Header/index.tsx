@@ -1,4 +1,3 @@
-import { useTheme } from "../../context/ThemeContext";
 import { FiMoon, FiSun } from "react-icons/fi";
 import { IoMenuOutline, IoCloseOutline } from "react-icons/io5";
 
@@ -6,7 +5,6 @@ import "./index.scss";
 import { useState } from "react";
 
 export function Header() {
-  const { theme, setTheme } = useTheme();
   const [isActive, setIsActive] = useState(false);
 
   const toggleResponsive = () => {
@@ -31,25 +29,13 @@ export function Header() {
             <a href="#projects">Projetos</a>
           </li>
           <li>
-            <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              disabled
-            >
-              {theme === "dark" ? (
-                <FiSun
-                  style={{
-                    width: "24px",
-                    height: "24px",
-                  }}
-                />
-              ) : (
-                <FiMoon
-                  style={{
-                    width: "24px",
-                    height: "24px",
-                  }}
-                />
-              )}
+            <button disabled>
+              <FiSun
+                style={{
+                  width: "24px",
+                  height: "24px",
+                }}
+              />
             </button>
           </li>
         </ul>
